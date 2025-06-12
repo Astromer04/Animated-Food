@@ -1,0 +1,46 @@
+name: animed_food1
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/logo.png
+    # Asegúrate de que los nombres de los archivos .ttf y .otf coincidan exactamente con lo que tienes.
+    - assets/fonts/Inter_18pt-Regular.ttf
+    - assets/fonts/Inter_18pt-Bold.ttf
+    - assets/fonts/Inter_18pt-SemiBold.ttf
+    - assets/fonts/heiseimaru.otf
+    # ¡NUEVOS ASSETS PARA LOS BOTONES!
+    - assets/images/google_logo_colored.png
+    - assets/images/phone_icon_green.png
+    - assets/images/mail_icon_red.png
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter_18pt-Regular.ttf
+        - asset: assets/fonts/Inter_18pt-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter_18pt-SemiBold.ttf
+          weight: 600
+
+    - family: Heisei Maru Gothic Std
+      fonts:
+        - asset: assets/fonts/heiseimaru.otf
+          weight: 800
