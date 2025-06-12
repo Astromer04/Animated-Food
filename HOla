@@ -1,0 +1,71 @@
+import 'dart:math';
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Random Button Demo',
+      theme: ThemeData(primarySwatch: Colors.deepOrange),
+      home: const RandomButtonPage(),
+    );
+  }
+}
+
+class RandomButtonPage extends StatefulWidget {
+  const RandomButtonPage({super.key});
+  @override
+  State<RandomButtonPage> createState() => _RandomButtonPageState();
+}
+
+class _RandomButtonPageState extends State<RandomButtonPage> {
+  int _randomNumber = 0;
+
+  void _generateRandom() {
+    final rand = Random();
+    setState(() {
+      _randomNumber = rand.nextInt(100); // 0–99
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Botón Aleatorio'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Número generado:',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              '$_randomNumber',
+              style: Theme.of(context)
+                  .textTheme
+                  .headline2
+                  ?.copyWith(color: Colors.deepOrange),
+            ),
+            const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: _generateRandom,
+              style: ElevatedButton.styleFrom(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                textStyle: const TextStyle(fontSize: 18),
+              ),
+              child: const Text('Generar Aleatorio'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
