@@ -19,21 +19,20 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  # Para las imágenes
   assets:
     - assets/images/logo.png
-    # Asegúrate de que los nombres de los archivos .ttf y .otf coincidan exactamente con lo que tienes.
-    - assets/fonts/Inter_18pt-Regular.ttf
-    - assets/fonts/Inter_18pt-Bold.ttf
-    - assets/fonts/Inter_18pt-SemiBold.ttf
-    - assets/fonts/heiseimaru.otf
-    # ¡NUEVOS ASSETS PARA LOS BOTONES!
     - assets/images/google_logo_colored.png
     - assets/images/phone_icon_green.png
     - assets/images/mail_icon_red.png
+    # ... otras imágenes que puedas tener.
 
+  # Para las fuentes
   fonts:
     - family: Inter
       fonts:
+        # CORREGIDO: Nombres de archivo de fuentes Inter según tu imagen
         - asset: assets/fonts/Inter_18pt-Regular.ttf
         - asset: assets/fonts/Inter_18pt-Bold.ttf
           weight: 700
@@ -42,5 +41,6 @@ flutter:
 
     - family: Heisei Maru Gothic Std
       fonts:
-        - asset: assets/fonts/heiseimaru.otf
-          weight: 800
+        # Asegúrate que el nombre del archivo de heiseimaru coincida exactamente
+        - asset: assets/fonts/heiseimaru.otf # Si tu archivo es .ttf, cámbialo a .ttf
+          weight: 800 # O el peso real de tu archivo de fuente
